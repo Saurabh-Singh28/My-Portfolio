@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saurabh Singh - Civil Engineering & Computer Science student passionate about building innovative solutions. Explore my projects including InfraDestiny and SmartSphere.">
+    <meta name="keywords" content="Saurabh Singh, Civil Engineer, Computer Science, Developer, Portfolio, InfraDestiny, SmartSphere, Web Development">
+    <meta name="author" content="Saurabh Singh">
+    <meta name="robots" content="index, follow">
+    <title>Saurabh Singh - Civil Engineer & Developer</title>
+    
+    <!-- Favicon -->    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+       <link rel="stylesheet" href="styles.css">    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#6366f1',
+                        'secondary': '#8b5cf6',
+                        'accent': '#06b6d4',
+                        'neon': '#00f5ff',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-900 text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-gray-900/80 backdrop-blur-md border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold font-poppins bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
+                        SS
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
+                        <a href="#skills" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Projects</a>
+                        <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Theme Toggle & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
+                        <i class="fas fa-moon text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800/50">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Skills</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Projects</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-indigo-900/30">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        </div>
+        
+        <!-- Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold font-poppins mb-6" data-aos="fade-up">
+                <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                    Saurabh Singh
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 font-medium" data-aos="fade-up" data-aos-delay="200">
+                Building the Future — From Structures to Software
+            </p>
+            
+            <div class="text-lg md:text-xl text-accent mb-12 h-8" data-aos="fade-up" data-aos-delay="400">
+                <span id="typewriter"></span>
+                <span class="typewriter-cursor">|</span>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="#projects" class="btn-primary px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105">
+                    View Projects
+                </a>
+                <a href="#contact" class="btn-secondary px-8 py-3 border-2 border-accent text-accent font-semibold rounded-full hover:bg-accent hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins text-center mb-16" data-aos="fade-up">
+                About <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Me</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Profile Image -->
+                <div class="profile-image">
+                 <div class="text-center" data-aos="fade-right">
+                    <div class="relative inline-block">
+                        <div class="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1">
+                            <div class="w-full h-full rounded-full bg-gray-800 flex items-center    justify-center">
+                                <!-- <i class="fas fa-user text-6xl text-gray-400"></i> -->
+                                 <a href="Saurabh.png" target="_blank">
+                                     <img src="Saurabh.png" alt="Saurabh Singh" class="w-full h-full object-cover rounded-full cursor-pointer transition-transform duration-300 transform hover:scale-105">
+                                 </a>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 animate-pulse"></div>
+                    </div>
+                 </div>
+                </div>
+                <!-- About Content -->
+                <div class="space-y-6" data-aos="fade-left">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Saurabh Singh is a passionate Civil Engineering & Computer Science student who blends physical design with digital innovation. He has worked on projects like <span class="text-accent font-semibold">InfraDestiny</span> and <span class="text-accent font-semibold">SmartSphere</span>, aiming to merge technology, infrastructure, and creativity.
+                    </p>
+                    
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        With a unique perspective that bridges the gap between traditional engineering and modern software development, I'm dedicated to creating solutions that make a real-world impact.
+                    </p>
+                    
+                    <!-- Info Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                        <div class="info-card p-4 bg-gray-700/50 rounded-lg border border-gray-600/50 hover:border-primary/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-center">
+                                <i class="fas fa-trophy text-2xl text-yellow-400 mb-2"></i>
+                                <h4 class="font-semibold text-white">Hackathon Participant</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card p-4 bg-gray-700/50 rounded-lg border border-gray-600/50 hover:border-secondary/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-center">
+                                <i class="fas fa-lightbulb text-2xl text-accent mb-2"></i>
+                                <h4 class="font-semibold text-white">Tech Innovator</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card p-4 bg-gray-700/50 rounded-lg border border-gray-600/50 hover:border-accent/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                            <div class="text-center">
+                                <i class="fas fa-heart text-2xl text-red-400 mb-2"></i>
+                                <h4 class="font-semibold text-white">Engineer by Passion</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins text-center mb-16" data-aos="fade-up">
+                My <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Skills</span>
+            </h2>
+            
+            <!-- Programming Skills -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-gray-300" data-aos="fade-up">Programming</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fab fa-html5 text-4xl text-orange-400 mb-3"></i>
+                        <span class="font-medium">HTML</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fab fa-css3-alt text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">CSS</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fab fa-js-square text-4xl text-yellow-400 mb-3"></i>
+                        <span class="font-medium">JavaScript</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-python text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">Python</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-node-js text-4xl text-green-400 mb-3"></i>
+                        <span class="font-medium">Node js</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-react text-4xl text-green-400 mb-3"></i>
+                        <span class="font-medium">react js</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-android text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">Kotlin</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-database text-4xl text-green-400 mb-3"></i>
+                        <span class="font-medium">MongoDB</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-database text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">SQL</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-database text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">PostgreSQL</span>
+                    </div>
+                     <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-code text-4xl text-blue-300 mb-3"></i>
+                        <span class="font-medium">C++</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fab fa-java text-4xl text-red-400 mb-3"></i>
+                        <span class="font-medium">Java</span>
+                    </div>
+                       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-linux text-4xl text-white mb-3"></i>
+                        <span class="font-medium">Kali Linux</span>
+                    </div>
+                      <div class="skill-card" data-aos="fade-up" data-aos-delay="140">
+                        <i class="fas fa-feather text-4xl text-green-300 mb-3"></i>
+                        <span class="font-medium">Parrot OS</span>
+                    </div>
+                      <div class="skill-card" data-aos="fade-up" data-aos-delay="130">
+                        <i class="fas fa-history text-4xl text-gray-300 mb-3"></i>
+                        <span class="font-medium">BackTrack</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="120">
+                        <img src="garuda-purple.svg" alt="Garuda Linux" style="height:70px;">
+                        <span class="font-medium">Garuda Linux</span>
+                    </div> 
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="blackarch.png" alt="blackarch" style="height: 70px;">
+                        <span class="font-medium">BlackArch</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Civil Tools -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-gray-300" data-aos="fade-up">Civil Engineering Tools</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-drafting-compass text-4xl text-red-400 mb-3"></i>
+                        <span class="font-medium">AutoCAD</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-building text-4xl text-green-400 mb-3"></i>
+                        <span class="font-medium">Revit</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-project-diagram text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">MS Project</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-map text-4xl text-green-500 mb-3"></i>
+                        <span class="font-medium">ArcGIS</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fas fa-cubes text-4xl text-yellow-400 mb-3"></i>
+                        <span class="font-medium">ETABS</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-ruler-combined text-4xl text-red-500 mb-3"></i>
+                        <span class="font-medium">STAAD Pro</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="700">
+                        <i class="fas fa-draw-polygon text-4xl text-purple-400 mb-3"></i>
+                        <span class="font-medium">SAP2000</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="800">
+                        <i class="fas fa-ruler text-4xl text-orange-400 mb-3"></i>
+                        <span class="font-medium">3DS Max</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Software Tools -->
+            <div>
+                <h3 class="text-2xl font-semibold text-center mb-8 text-gray-300" data-aos="fade-up">Software Tools</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-figma text-4xl text-purple-400 mb-3"></i>
+                        <span class="font-medium">Figma</span>
+                    </div>
+                    <a href="https://github.com/Saurabh-Singh28">
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fab fa-github text-4xl text-gray-400 mb-3"></i>
+                            <span class="font-medium">GitHub</span>
+                        </div>
+                    </a>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fab fa-docker text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">Docker</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fab fa-aws text-4xl text-yellow-500 mb-3"></i>
+                        <span class="font-medium">AWS</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fab fa-jenkins text-4xl text-red-500 mb-3"></i>
+                        <span class="font-medium">Jenkins</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-code-branch text-4xl text-green-400 mb-3"></i>
+                        <span class="font-medium">Git</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="700">
+                        <i class="fab fa-jira text-4xl text-blue-500 mb-3"></i>
+                        <span class="font-medium">Jira</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="800">
+                        <i class="fab fa-slack text-4xl text-purple-500 mb-3"></i>
+                        <span class="font-medium">Slack</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="900">
+                        <i class="fab fa-trello text-4xl text-blue-400 mb-3"></i>
+                        <span class="font-medium">Trello</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1000">
+                        <i class="fab fa-gitlab text-4xl text-orange-500 mb-3"></i>
+                        <span class="font-medium">GitLab</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1100">
+                        <i class="fab fa-bitbucket text-4xl text-blue-500 mb-3"></i>
+                        <span class="font-medium">Bitbucket</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="1200">
+                        <i class="fas fa-cloud text-4xl text-purple-400 mb-3"></i>
+                        <span class="font-medium">Azure</span>
+                    </div>
+                </div>
+                <!-- Add space after the final row of software tools -->
+                <div class="mb-12"></div>
+
+                <!-- Add a separator line -->
+                <div class="border-t border-gray-700 my-8 max-w-4xl mx-auto"></div>
+
+                <!-- Add heading for Operating Systems section -->
+                <h3 class="text-2xl font-semibold text-center mb-8 text-gray-300" data-aos="fade-up">Operating Systems</h3>
+
+                <!-- Grid for Operating System skills -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fab fa-linux text-4xl text-white mb-3"></i>
+                        <span class="font-medium">Kali Linux</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-feather text-4xl text-green-300 mb-3"></i>
+                        <span class="font-medium">Parrot OS</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-history text-4xl text-gray-300 mb-3"></i>
+                        <span class="font-medium">BackTrack</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="garuda-purple.svg" alt="Garuda Linux" class="h-16 mb-3">
+                        <span class="font-medium">Garuda Linux</span>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                        <img src="blackarch.png" alt="BlackArch" class="h-16 mb-3">
+                        <span class="font-medium">BlackArch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins text-center mb-16" data-aos="fade-up">
+                Featured <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- InfraDestiny Project -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">InfraDestiny</h3>
+                        <p class="text-gray-300 mb-4">Fintech + Smart Platform combining financial technology with infrastructure planning and management solutions.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">FinTech</span>
+                        </div>
+                        
+                        <button class="project-btn w-full py-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- SmartSphere Project -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-brain text-3xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">SmartSphere</h3>
+                        <p class="text-gray-300 mb-4">AI-driven Multi-Sector Web App providing intelligent solutions across various industries and domains.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Web App</span>
+                            <span class="tech-tag">Multi-Sector</span>
+                        </div>
+                        
+                        <button class="project-btn w-full py-2 bg-gradient-to-r from-secondary to-accent text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hackathon Innovations -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-rocket text-3xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Hackathon Innovations</h3>
+                        <p class="text-gray-300 mb-4">Real-world Tech Solutions developed during various hackathons, focusing on practical problem-solving.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Innovation</span>
+                            <span class="tech-tag">Problem Solving</span>
+                            <span class="tech-tag">Tech Solutions</span>
+                        </div>
+                        
+                        <button class="project-btn w-full py-2 bg-gradient-to-r from-accent to-primary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+                  <!-- Ayu Hub Project -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <i class="fas fa-leaf text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Ayu Hub</h3>
+                        <p class="text-gray-300 mb-4">An innovative platform merging traditional Ayurvedic wisdom with modern healthcare technology, offering personalized wellness solutions and holistic healing approaches.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">FinTech</span>
+                            <span class="tech-tag">AI/ML</span>
+                        </div>
+                        <div class="project-btn-container">
+                            <button class="project-btn w-full py-2 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins text-center mb-16" data-aos="fade-up">
+                Get In <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <form id="contact-form" action="https://formspree.io/f/myznlnga" method="POST" class="space-y-6"></form>
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-white placeholder-gray-400 transition-all duration-300"
+                                placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-white placeholder-gray-400 transition-all duration-300"
+                                placeholder="Enter your email">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-white placeholder-gray-400 resize-none transition-all duration-300"
+                                placeholder="Type your message here"></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-white">Let's Connect</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            I'm always open to discussing new opportunities, innovative projects, and collaborations. Whether you have a question or just want to say hi, feel free to reach out!
+                        </p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6">
+                        <a href="www.linkedin.com/in/saurabh108singh" target="_blank" class="social-link text-2xl text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Saurabh-Singh28" target="_blank" class="social-link text-2xl text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:saurabhgg031@gmail.com" class="social-link text-2xl text-gray-400 hover:text-red-400 transition-colors duration-300" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Details -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span class="text-gray-300"><a href="mailto:saurabhgg031@gmail.com" target="_blank">Email: saurabhgg031@gmail.com</a></span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span class="text-gray-300">Location: India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Saurabh Singh | Designed with <span class="text-red-400">&#128151;</span> using HTML, CSS & JS
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
